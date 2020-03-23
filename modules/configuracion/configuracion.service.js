@@ -1,7 +1,10 @@
 "use strict";
 
-angular.module("ConfiguracionModule")
-    .factory('ConfiguracionService', ['$http', '$q', function ($http, $q) {
+(function () {
+    angular.module("ConfiguracionModule")
+        .factory('ConfiguracionService', ['$http', '$q', ConfiguracionService])
+
+    function ConfiguracionService($http, $q) {
         var self = {
             cargar: function () {
                 var defered = $q.defer();
@@ -17,4 +20,5 @@ angular.module("ConfiguracionModule")
         }
 
         return self;
-    }])
+    }
+})();

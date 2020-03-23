@@ -1,8 +1,10 @@
 "use strict";
 
-angular.module("DashboardModule")
-    .factory('MensajeService', ['$http', '$q', function ($http, $q) {
+(function () {
+    angular.module("DashboardModule")
+        .factory('MensajeService', ['$http', '$q', MensajeService]);
 
+    function MensajeService($http, $q) {
         var self = {
             mensajes: [
                 {
@@ -35,6 +37,6 @@ angular.module("DashboardModule")
                 return defered.promise;
             }
         };
-
         return self;
-    }]);
+    }
+})();

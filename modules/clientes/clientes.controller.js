@@ -1,6 +1,10 @@
 "use strict";
 
-angular.module("ClienteModule")
-    .controller('ClienteController', ['$scope', function ($scope) {
+(function () {
+    angular.module("ClienteModule")
+        .controller('ClienteController', ['$scope', ClienteController]);
+
+    function ClienteController($scope) {
         $scope.activar('mClientes');
-    }]);
+    }
+})();

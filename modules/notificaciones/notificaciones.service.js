@@ -1,7 +1,10 @@
 "use strict";
 
-angular.module("DashboardModule")
-    .factory('NotificacionesService', ['$http', '$q', function ($http, $q) {
+(function () {
+    angular.module("DashboardModule")
+        .factory('NotificacionesService', ['$http', '$q', NotificacionesService]);
+
+    function NotificacionesService($http, $q) {
         var self = {
             notificaciones: [
                 {
@@ -23,4 +26,5 @@ angular.module("DashboardModule")
         }
 
         return self;
-    }]);
+    }
+})();
