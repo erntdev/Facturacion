@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+    db:
+        image: mysqldb
+        build:
+            context: .
+            dockerfile: Dockerfile-mysql
+        container_name: mysql
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: secret
+            MYSQL_DATABASE: facturaciondb
+            MYSQL_USER: mysql_user
+            MYSQL_PASSWORD: mysql_password
+        networks:
+            - my-network
+    web:
+        image: webapp
+        build:
+            context: .
+            dockerfile: Dockerfile-php
+        container_name: php7-web
+        ports:
+            - 8080:80
+        networks:
+            - my-network
+networks:
+    my-network:

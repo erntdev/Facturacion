@@ -1,0 +1,16 @@
+<a class="nav-link" data-toggle="dropdown" href="#">
+  <i class="far fa-bell"></i>
+  <span class="badge badge-warning navbar-badge" ng-hide="notificaciones.length === 0">{{notificaciones.length}}</span>
+</a>
+<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+  <span class="dropdown-header">List of notifications</span>
+  <div class="dropdown-divider"></div>
+  <div ng-repeat="notificacion in notificaciones">
+    <a href="" class="dropdown-item">
+      <i class="fas {{notificacion.icono}} mr-2"></i>{{notificacion.texto}}
+      <span class="float-right text-muted text-sm">{{notificacion.tiempo}}</span>
+    </a>
+    <div class="dropdown-divider"></div>
+  </div>
+  <a href="" class="dropdown-item dropdown-footer">See All Notifications</a>
+</div>
