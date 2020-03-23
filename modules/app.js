@@ -1,30 +1,37 @@
-"use strict";
-
 (function () {
+    "use strict";
+
     angular.module("FacturacionModule")
-        .controller("MainController", ["ConfiguracionService", "MensajeService", "NotificacionesService", MainController]);
+        .controller("MainController", MainController);
+
+    MainController.$inject = ["ConfiguracionService", "MensajeService", "NotificacionesService"];
 
     function MainController(configuracionService, mensajeService, notificacionesService) {
         var vm = this;
-        vm.config = {};
+
         vm.mensajes = mensajeService.mensajes;
         vm.notificaciones = notificacionesService.notificaciones;
-
-        configuracionService.cargar()
-            .then(function (data) {
-                vm.config = data;
-            });
-
+        vm.activar = activar;
+        vm.config = {};
         vm.usuario = {
             nombre: "Ernesto García"
         }
 
-        vm.activar = function (menu, submenu) {
+        activar('mDashboard');
+        cargarData();
+
+        // Function declaration
+        function activar(menu, submenu) {
             vm.mDashboard = "";
             vm.mClientes = "";
             vm[menu] = 'active';
         }
 
-        vm.activar('mDashboard');
+        function cargarData() {
+            configuracionService.cargar()
+                .then(function (data) {
+                    vm.config = data;
+                });
+        }
     }
 })();

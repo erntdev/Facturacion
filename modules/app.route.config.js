@@ -1,7 +1,11 @@
-"use strict";
+(function () {
+    "use strict";
+    angular.module("FacturacionModule")
+        .config(config);
 
-angular.module("FacturacionModule")
-    .config(['$routeProvider', function ($routeProvider) {
+    config.$inject = ['$routeProvider'];
+
+    function config($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'modules/dashboard/dashboard.component.html',
@@ -14,4 +18,5 @@ angular.module("FacturacionModule")
             .otherwise({
                 redirectTo: "/"
             })
-    }]);
+    }
+})();
