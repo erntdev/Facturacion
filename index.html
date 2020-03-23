@@ -3,14 +3,14 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html lang="en" ng-app="FacturacionModule" ng-controller="MainController">
+<html lang="en" ng-app="FacturacionModule" ng-controller="MainController as main">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Sistema de {{config.aplicacion}}</title>
+  <title>Sistema de {{main.config.aplicacion}}</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -152,11 +152,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <footer class="main-footer">
       <!-- To the right -->
       <div class="float-right d-none d-sm-inline">
-        {{config.version}}
+        {{main.config.version}}
       </div>
       <!-- Default to the left -->
-      <strong>Copyright &copy; {{config.anio}}
-        <a href="{{config.web}}" target="blank">{{config.empresa}}</a>
+      <strong>Copyright &copy; {{main.config.anio}}
+        <a href="{{main.config.web}}" target="blank">{{main.config.empresa}}</a>
         .</strong>
       All rights reserved.
     </footer>

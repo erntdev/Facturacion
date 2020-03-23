@@ -5,23 +5,24 @@
         .controller("MainController", ["$scope", "ConfiguracionService", "MensajeService", "NotificacionesService", MainController]);
 
     function MainController($scope, configuracionService, mensajeService, notificacionesService) {
-        $scope.config = {};
-        $scope.mensajes = mensajeService.mensajes;
-        $scope.notificaciones = notificacionesService.notificaciones;
+        var vm = this;
+        vm.config = {};
+        vm.mensajes = mensajeService.mensajes;
+        vm.notificaciones = mensajeService.notificaciones;
 
         configuracionService.cargar()
             .then(function (data) {
-                $scope.config = data;
+                vm.config = data;
             });
 
-        $scope.usuario = {
+        vm.usuario = {
             nombre: "Ernesto García"
         }
 
         $scope.activar = function (menu, submenu) {
-            $scope.mDashboard = "";
-            $scope.mClientes = "";
-            $scope[menu] = 'active';
+            vm.mDashboard = "";
+            vm.mClientes = "";
+            vm[menu] = 'active';
         }
     }
 })();
