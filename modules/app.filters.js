@@ -1,6 +1,6 @@
 "use strict";
 
-mainApp
+angular.module("FacturacionModule")
     .filter('quitarLetra', function () {
         return function (palabra) {
             if (palabra) {

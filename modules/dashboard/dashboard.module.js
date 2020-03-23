@@ -1,3 +1,3 @@
 "use strict";
 
-var dashboardModule = angular.module('DashboardModule', []);
+angular.module('DashboardModule', []);

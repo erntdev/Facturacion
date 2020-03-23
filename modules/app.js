@@ -1,32 +1,24 @@
 "use strict";
 
-var mainApp = angular.module("FacturacionModule", [
-    "ngRoute",
-    "ConfiguracionModule",
-    "MensajesModule",
-    "NotificacionesModule",
-    "ClienteModule",
-    "DashboardModule"
-]);
+angular.module("FacturacionModule")
+    .controller("MainController", ["$scope", "ConfiguracionService", "MensajeService", "NotificacionesService",
+        function ($scope, configuracionService, mensajeService, notificacionesService) {
+            $scope.config = {};
+            $scope.mensajes = mensajeService.mensajes;
+            $scope.notificaciones = notificacionesService.notificaciones;
 
-mainApp.controller("MainController", ["$scope", "ConfiguracionService", "MensajeService", "NotificacionesService",
-    function ($scope, configuracionService, mensajeService, notificacionesService) {
-        $scope.config = {};
-        $scope.mensajes = mensajeService.mensajes;
-        $scope.notificaciones = notificacionesService.notificaciones;
+            configuracionService.cargar()
+                .then(function (data) {
+                    $scope.config = data;
+                });
 
-        configuracionService.cargar()
-            .then(function (data) {
-                $scope.config = data;
-            });
+            $scope.usuario = {
+                nombre: "Ernesto García"
+            }
 
-        $scope.usuario = {
-            nombre: "Ernesto García"
-        }
-
-        $scope.activar = function (menu, submenu) {
-            $scope.mDashboard = "";
-            $scope.mClientes = "";
-            $scope[menu] = 'active';
-        }
-    }]);
+            $scope.activar = function (menu, submenu) {
+                $scope.mDashboard = "";
+                $scope.mClientes = "";
+                $scope[menu] = 'active';
+            }
+        }]);

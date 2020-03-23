@@ -1,3 +1,3 @@
 "use strict";
 
-var configuracionModule = angular.module('ConfiguracionModule', []);
+angular.module('ConfiguracionModule', []);

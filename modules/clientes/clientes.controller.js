@@ -1,5 +1,6 @@
 "use strict";
 
-clientModule.controller('ClienteController', ['$scope', function ($scope) {
-    $scope.activar('mClientes');
-}]);
+angular.module("ClienteModule")
+    .controller('ClienteController', ['$scope', function ($scope) {
+        $scope.activar('mClientes');
+    }]);

@@ -1,5 +1,6 @@
 "use strict";
 
-dashboardModule.controller('DashboardController', ['$scope', function ($scope) {
-    $scope.activar('mDashboard');
-}]);
+angular.module("DashboardModule")
+    .controller('DashboardController', ['$scope', function ($scope) {
+        $scope.activar('mDashboard');
+    }]);

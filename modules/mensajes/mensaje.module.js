@@ -1,3 +1,3 @@
 "use strict";
 
-var mensajeModule = angular.module('MensajesModule', []);
+angular.module('MensajesModule', []);
