@@ -2,9 +2,8 @@
 
 (function () {
     angular.module("ClienteModule")
-        .controller('ClienteController', ['$scope', ClienteController]);
+        .controller('ClienteController', ClienteController);
 
-    function ClienteController($scope) {
-        $scope.activar('mClientes');
+    function ClienteController() {
     }
 })();

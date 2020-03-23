@@ -1,10 +1,10 @@
 <!-- Messages Dropdown Menu -->
 <a class="nav-link" data-toggle="dropdown" href="#">
     <i class="far fa-comments"></i>
-    <span class="badge badge-danger navbar-badge">{{mensajes.length}}</span>
+    <span class="badge badge-danger navbar-badge">{{main.mensajes.length}}</span>
 </a>
 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-    <div ng-repeat="msj in mensajes">
+    <div ng-repeat="msj in main.mensajes">
         <a href="" class="dropdown-item">
             <div class="media">
                 <img ng-src="{{msj.img}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
