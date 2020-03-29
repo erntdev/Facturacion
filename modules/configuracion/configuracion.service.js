@@ -1,24 +1,28 @@
-"use strict";
-
 (function () {
+    "use strict";
     angular.module("ConfiguracionModule")
-        .factory('ConfiguracionService', ['$http', '$q', ConfiguracionService])
+        .factory('ConfiguracionService', ConfiguracionService)
+
+    ConfiguracionService.$inject = ['$http', '$q'];
 
     function ConfiguracionService($http, $q) {
+
         var self = {
-            cargar: function () {
-                var defered = $q.defer();
-                $http.get('modules/configuracion/configuracion.json')
-                    .then(function (response) {
-                        defered.resolve(response.data);
-                    }, function (handleError) {
-                        defered.reject();
-                        console.error("No se pudo el archivo de configuracion: ", handleError);
-                    });
-                return defered.promise;
-            }
+            cargar: cargar
         }
 
         return self;
+
+        function cargar() {
+            var defered = $q.defer();
+            $http.get('modules/configuracion/configuracion.json')
+                .then(function (response) {
+                    defered.resolve(response.data);
+                }, function (handleError) {
+                    defered.reject();
+                    console.error("No se pudo el archivo de configuracion: ", handleError);
+                });
+            return defered.promise;
+        }
     }
 })();

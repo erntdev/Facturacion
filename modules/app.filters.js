@@ -1,7 +1,11 @@
-"use strict";
+(function () {
+    "use strict";
 
-angular.module("FacturacionModule")
-    .filter('quitarLetra', function () {
+    angular.module("FacturacionModule")
+        .filter('quitarLetra', QuitarLetraFilter)
+        .filter('mensajeCorto', MensajeCortoFilter)
+
+    function QuitarLetraFilter() {
         return function (palabra) {
             if (palabra) {
                 if (palabra.length > 1) {
@@ -11,8 +15,9 @@ angular.module("FacturacionModule")
                 }
             }
         }
-    })
-    .filter('mensajeCorto', function () {
+    }
+
+    function MensajeCortoFilter() {
         return function (mensaje) {
             if (mensaje) {
                 if (mensaje.length > 25) {
@@ -21,4 +26,5 @@ angular.module("FacturacionModule")
                 return mensaje;
             }
         }
-    })
+    }
+})();

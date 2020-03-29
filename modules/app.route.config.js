@@ -1,11 +1,11 @@
 (function () {
     "use strict";
     angular.module("FacturacionModule")
-        .config(config);
+        .config(Config);
 
-    config.$inject = ['$routeProvider'];
+    Config.$inject = ['$routeProvider'];
 
-    function config($routeProvider) {
+    function Config($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'modules/dashboard/dashboard.component.html',
