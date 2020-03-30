@@ -11,7 +11,7 @@
                 templateUrl: 'modules/dashboard/dashboard.component.html',
                 controller: 'DashboardController'
             })
-            .when('/clientes', {
+            .when('/clientes/:pag', {
                 templateUrl: 'modules/clientes/clientes.component.html',
                 controller: 'ClienteController'
             })

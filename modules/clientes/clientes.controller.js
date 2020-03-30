@@ -3,20 +3,25 @@
     angular.module("ClienteModule")
         .controller('ClienteController', ClienteController);
 
-    ClienteController.$inject = ['ClienteFactory'];
+    ClienteController.$inject = ['$routeParams', 'ClienteFactory'];
 
-    function ClienteController(clienteFactory) {
+    function ClienteController($routeParams, clienteFactory) {
         var vm = this;
+        var page = $routeParams.pag;
 
+        vm.moveTo = moveTo;
         vm.clientes = {};
         vm.titulo = "Clientes";
         vm.subtitulo = "Listado";
         clienteFactory.setActive();
+        moveTo(page);
 
-        getClients();
+        function moveTo(page) {
+            loadPage(page);
+        }
 
-        function getClients() {
-            clienteFactory.getClient()
+        function loadPage(page) {
+            clienteFactory.getClient(page)
                 .then(function () {
                     vm.clientes = clienteFactory;
                 });

@@ -16,17 +16,17 @@
             pagAnterior: 1,
             totalPaginas: 1,
             paginas: [],
-            getClient: getClient,
+            getClient: loadPage,
             setActive: setActive
         }
 
         return services;
 
-        function getClient() {
+        function loadPage(page) {
             var here = this;
             var deferred = $q.defer();
 
-            $http.get('php/clientes/get.clientes.php')
+            $http.get('php/clientes/get.clientes.php?pag=' + page)
                 .then(function (response) {
                     here.err = response.data.err;
                     here.conteo = response.data.conteo;

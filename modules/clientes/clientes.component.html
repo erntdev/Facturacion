@@ -61,6 +61,24 @@
             </tbody>
           </table>
         </div>
+
+        <div class="card-footer clearfix">
+          <ul class="pagination pagination-sm m-0 float-right">
+            <li class="page-item">
+              <a class="page-link" ng-click="client.moveTo(1)">«</a>
+            </li>
+
+            <li class="page-item" ng-repeat="pag in client.clientes.paginas"
+              ng-class="{'active': client.clientes.pagActual === pag}">
+              <a class="page-link" ng-click="client.moveTo(pag)">{{pag}}</a>
+            </li>
+
+            <li class="page-item">
+              <a class="page-link" ng-click="client.moveTo(client.clientes.totalPaginas)">»</a>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </div>
