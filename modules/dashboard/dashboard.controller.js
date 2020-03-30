@@ -3,6 +3,12 @@
     angular.module("DashboardModule")
         .controller('DashboardController', DashboardController);
 
-    function DashboardController() {
+    DashboardController.$inject = ["DashboardFactory"];
+
+    function DashboardController(dashboardFactory) {
+        var vm = this;
+        vm.titulo = "Dashboard";
+        vm.subtitulo = "Información";
+        dashboardFactory.setActive();
     }
 })();

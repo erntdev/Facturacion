@@ -7,7 +7,11 @@
 
     function ClienteController(clienteFactory) {
         var vm = this;
+
         vm.clientes = {};
+        vm.titulo = "Clientes";
+        vm.subtitulo = "Listado";
+        clienteFactory.setActive();
 
         getClients();
 

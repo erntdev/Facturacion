@@ -3,10 +3,10 @@
     angular.module('ClienteModule')
         .factory('ClienteFactory', ClienteFactory)
 
-    ClienteFactory.$inject = ['$http', '$q']
+    ClienteFactory.$inject = ['$http', '$q', 'SharedMenuFactory']
 
-    function ClienteFactory($http, $q) {
-        var self = {
+    function ClienteFactory($http, $q, sharedMenuFactory) {
+        var services = {
             cargando: false,
             err: false,
             conteo: 0,
@@ -16,10 +16,11 @@
             pagAnterior: 1,
             totalPaginas: 1,
             paginas: [],
-            getClient: getClient
+            getClient: getClient,
+            setActive: setActive
         }
 
-        return self;
+        return services;
 
         function getClient() {
             var here = this;
@@ -42,6 +43,10 @@
                 });
 
             return deferred.promise;
+        }
+
+        function setActive() {
+            sharedMenuFactory.activar('mCliente');
         }
     }
 })()

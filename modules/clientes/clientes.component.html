@@ -1,52 +1,66 @@
-<ol class="breadcrumb animated fadeIn fast">
-  <li class="breadcrumb-item"><a href="#!/">Dashboard</a></li>
-  <li class="breadcrumb-item active">Clientes</li>
-</ol>
-
-
-<div class="row">
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Clientes</h3>
-
-        <div class="card-tools">
-          <div class="input-group input-group-sm">
-            <a href="" class="btn btn-primary">
-              <i class="fas fa-plus"></i>
-              Agregar Cliente
-            </a>
-          </div>
+<div ng-controller="ClienteController as client">
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">{{client.titulo}}
+            <small>{{client.subtitulo}}</small>
+          </h1>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="card-body" ng-controller="ClienteController as client">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Nombre</th>
-              <th>Correo</th>
-              <th>Teléfono 1</th>
-              <th>Teléfono 2</th>
-              <th>Editar</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="client in client.clientes.result">
-              <td>{{client.id}}</td>
-              <td>{{client.nombre}}</td>
-              <td>{{client.correo}}</td>
-              <td>{{client.telefono1}}</td>
-              <td>{{client.telefono2}}</td>
-              <td>
-                <a href="" class="btn btn-warning">
-                  <i class="fas fa-edit"></i>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+  <ol class="breadcrumb animated fadeIn fast">
+    <li class="breadcrumb-item"><a href="#!/">Dashboard</a></li>
+    <li class="breadcrumb-item active">Clientes</li>
+  </ol>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Clientes</h3>
+
+          <div class="card-tools">
+            <div class="input-group input-group-sm">
+              <a href="" class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                Agregar Cliente
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Teléfono 1</th>
+                <th>Teléfono 2</th>
+                <th>Editar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="client in client.clientes.result">
+                <td>{{client.id}}</td>
+                <td>{{client.nombre}}</td>
+                <td>{{client.correo}}</td>
+                <td>{{client.telefono1}}</td>
+                <td>{{client.telefono2}}</td>
+                <td>
+                  <a href="" class="btn btn-warning">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

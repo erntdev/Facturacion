@@ -1,3 +1,3 @@
 "use strict";
 
-angular.module('DashboardModule', []);
+angular.module('DashboardModule', ['SharedMenuModule']);

@@ -1,3 +1,3 @@
 "use strict";
 
-angular.module('ClienteModule', []);
+angular.module('ClienteModule', ['SharedMenuModule']);

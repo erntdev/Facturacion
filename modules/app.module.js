@@ -4,5 +4,6 @@ angular.module("FacturacionModule", [
     "MensajesModule",
     "NotificacionesModule",
     "ClienteModule",
-    "DashboardModule"
+    "DashboardModule",
+    "MenuModule"
 ]);
