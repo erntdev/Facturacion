@@ -54,7 +54,8 @@
             var deferred = $q.defer();
             $http.post('php/clientes/post.client.save.php', client)
             .then(function(response) {
-                deferred.resolve();
+                deferred.resolve(response);
+                services.getClient(services.pagActual);
             }, function(handleError) {
                 console.log(handleError);
                 deferred.reject(handleError);
