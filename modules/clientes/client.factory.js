@@ -17,7 +17,8 @@
             totalPaginas: 1,
             paginas: [],
             getClient: loadPage,
-            setActive: setActive
+            setActive: setActive,
+            save: save
         }
 
         return services;
@@ -47,6 +48,18 @@
 
         function setActive() {
             sharedMenuFactory.activar('mCliente');
+        }
+
+        function save(client) {
+            var deferred = $q.defer();
+            $http.post('php/clientes/post.client.save.php', client)
+            .then(function(response) {
+                deferred.resolve();
+            }, function(handleError) {
+                console.log(handleError);
+                deferred.reject(handleError);
+            })
+            return deferred.promise;
         }
     }
 })()

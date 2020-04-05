@@ -25,7 +25,7 @@
 
           <div class="card-tools">
             <div class="input-group input-group-sm">
-              <a href="" class="btn btn-primary">
+              <a ng-click="client.showModal({})" class="btn btn-primary">
                 <i class="fas fa-plus"></i>
                 Agregar Cliente
               </a>
@@ -46,14 +46,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="client in client.clientes.result">
-                <td>{{client.id}}</td>
-                <td>{{client.nombre}}</td>
-                <td>{{client.correo}}</td>
-                <td>{{client.telefono1}}</td>
-                <td>{{client.telefono2}}</td>
+              <tr ng-repeat="clientInformation in client.clientes.result">
+                <td>{{clientInformation.id}}</td>
+                <td>{{clientInformation.nombre}}</td>
+                <td>{{clientInformation.correo}}</td>
+                <td>{{clientInformation.telefono1}}</td>
+                <td>{{clientInformation.telefono2}}</td>
                 <td>
-                  <a href="" class="btn btn-warning">
+                  <a ng-click="client.showModal(clientInformation)" class="btn btn-warning"/>
                     <i class="fas fa-edit"></i>
                   </a>
                 </td>
@@ -82,4 +82,6 @@
       </div>
     </div>
   </div>
+
+  <div ng-include="'modules/shared/modal/modal-client.html'"></div>
 </div>

@@ -1,3 +1,6 @@
 "use strict";
 
-angular.module('ClienteModule', ['SharedMenuModule']);
+angular.module('ClienteModule', [
+    'SharedMenuModule',
+    'jcs-autoValidate'
+]);
