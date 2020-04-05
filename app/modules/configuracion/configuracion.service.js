@@ -15,7 +15,7 @@
 
         function cargar() {
             var defered = $q.defer();
-            $http.get('modules/configuracion/configuracion.json')
+            $http.get('app/modules/configuracion/configuracion.json')
                 .then(function (response) {
                     defered.resolve(response.data);
                 }, function (handleError) {

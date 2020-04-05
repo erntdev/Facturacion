@@ -20,38 +20,40 @@
   <script src="js/angular.min.js"></script>
   <script src="js/angular-route.min.js"></script>
   <script src="js/jcs-auto-validate.min.js"></script>
-  <script src="modules/shared/modal/modal-autovalidate.js"></script>
+  <script src="app/modules/shared/modal/modal-autovalidate.js"></script>
 
   <!-- Módulos -->
-  <script src="modules/app.module.js"></script>
-  <script src="modules/clientes/clientes.module.js"></script>
-  <script src="modules/configuracion/configuracion.module.js"></script>
-  <script src="modules/dashboard/dashboard.module.js"></script>
-  <script src="modules/mensajes/mensaje.module.js"></script>
-  <script src="modules/notificaciones/notificaciones.module.js"></script>
-  <script src="modules/menu/menu.module.js"></script>
-  <script src="modules/shared/shared-menu/shared-menu.module.js"></script>
+  <script src="app/app.module.js"></script>
+  <script src="app/modules/login/login.module.js"></script>
+  <script src="app/modules/clientes/clientes.module.js"></script>
+  <script src="app/modules/configuracion/configuracion.module.js"></script>
+  <script src="app/modules/dashboard/dashboard.module.js"></script>
+  <script src="app/modules/mensajes/mensaje.module.js"></script>
+  <script src="app/modules/notificaciones/notificaciones.module.js"></script>
+  <script src="app/modules/menu/menu.module.js"></script>
+  <script src="app/modules/shared/shared-menu/shared-menu.module.js"></script>
 
   <!-- Routers -->
-  <script src="modules/app.route.config.js"></script>
+  <script src="app/app.route.config.js"></script>
 
   <!-- Filters -->
-  <script src="modules/app.filters.js"></script>
+  <script src="app/app.filters.js"></script>
 
   <!-- Controladores -->
-  <script src="modules/app.js"></script>
-  <script src="modules/clientes/clientes.controller.js"></script>
-  <script src="modules/dashboard/dashboard.controller.js"></script>
-  <script src="modules/menu/menu.controller.js"></script>
+  <script src="app/app.controller.js"></script>
+  <script src="app/modules/login/login.controller.js"></script>
+  <script src="app/modules/clientes/clientes.controller.js"></script>
+  <script src="app/modules/dashboard/dashboard.controller.js"></script>
+  <script src="app/modules/menu/menu.controller.js"></script>
 
   <!-- Services and Factories -->
-  <script src="modules/configuracion/configuracion.service.js"></script>
-  <script src="modules/mensajes/mensaje.service.js"></script>
-  <script src="modules/notificaciones/notificaciones.service.js"></script>
-  <script src="modules/clientes/client.factory.js"></script>
-  <script src="modules/dashboard/dashboard.factory.js"></script>
-  <script src="modules/menu/menu.factory.js"></script>
-  <script src="modules/shared/shared-menu/shared-menu.factory.js"></script>
+  <script src="app/modules/configuracion/configuracion.service.js"></script>
+  <script src="app/modules/mensajes/mensaje.service.js"></script>
+  <script src="app/modules/notificaciones/notificaciones.service.js"></script>
+  <script src="app/modules/clientes/client.factory.js"></script>
+  <script src="app/modules/dashboard/dashboard.factory.js"></script>
+  <script src="app/modules/menu/menu.factory.js"></script>
+  <script src="app/modules/shared/shared-menu/shared-menu.factory.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -86,18 +88,18 @@
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown" ng-include="'modules/mensajes/mensajes.component.html'">
+        <li class="nav-item dropdown" ng-include="'app/modules/mensajes/mensajes.component.html'">
         </li>
 
         <!-- Notifications Dropdown Menu -->
-        <li class="nav-item dropdown" ng-include="'modules/notificaciones/notificaciones.component.html'">
+        <li class="nav-item dropdown" ng-include="'app/modules/notificaciones/notificaciones.component.html'">
         </li>
       </ul>
     </nav>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4" ng-include="'modules/menu/menu.component.html'">
+    <aside class="main-sidebar sidebar-dark-primary elevation-4" ng-include="'app/modules/menu/menu.component.html'">
     </aside>
 
     <div class="content-wrapper">
