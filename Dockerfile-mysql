@@ -1,3 +1,4 @@
 FROM mysql:5.7
 
-COPY ./clientes.sql /docker-entrypoint-initdb.d/initdb.sql
+COPY ./sql/clientes.sql /docker-entrypoint-initdb.d/clientes.sql
+COPY ./sql/usuarios.sql /docker-entrypoint-initdb.d/usuarios.sql
