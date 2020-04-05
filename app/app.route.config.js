@@ -12,7 +12,7 @@
                 controller: 'DashboardController'
             })
             .when('/clientes/:pag', {
-                templateUrl: 'app/modules/clientes/clientes.component.html',
+                templateUrl: 'app/modules/client/client.component.html',
                 controller: 'ClienteController'
             })
             .otherwise({

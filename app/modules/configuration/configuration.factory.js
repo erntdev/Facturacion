@@ -15,12 +15,12 @@
 
         function cargar() {
             var defered = $q.defer();
-            $http.get('app/modules/configuracion/configuracion.json')
+            $http.get('app/modules/configuration/configuration.json')
                 .then(function (response) {
                     defered.resolve(response.data);
                 }, function (handleError) {
                     defered.reject();
-                    console.error("No se pudo el archivo de configuracion: ", handleError);
+                    console.error("Could not get configuration file: ", handleError);
                 });
             return defered.promise;
         }
