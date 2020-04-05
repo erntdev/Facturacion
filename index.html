@@ -15,44 +15,52 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="css/animate.css">
-
+  
   <!-- Importaciones de Angular -->
   <script src="js/angular.min.js"></script>
   <script src="js/angular-route.min.js"></script>
   <script src="js/jcs-auto-validate.min.js"></script>
   <script src="app/modules/shared/modal/modal-autovalidate.js"></script>
-
-  <!-- Módulos -->
+  
+  <!-- Main App -->
   <script src="app/app.module.js"></script>
-  <script src="app/modules/login/login.module.js"></script>
-  <script src="app/modules/client/client.module.js"></script>
-  <script src="app/modules/configuration/configuration.module.js"></script>
-  <script src="app/modules/dashboard/dashboard.module.js"></script>
-  <script src="app/modules/message/message.module.js"></script>
-  <script src="app/modules/notifications/notifications.module.js"></script>
-  <script src="app/modules/menu/menu.module.js"></script>
-  <script src="app/modules/shared/shared-menu/shared-menu.module.js"></script>
-
-  <!-- Routers -->
   <script src="app/app.route.config.js"></script>
-
-  <!-- Filters -->
   <script src="app/app.filters.js"></script>
-
-  <!-- Controladores -->
   <script src="app/app.controller.js"></script>
-  <script src="app/modules/login/login.controller.js"></script>
+  
+  <!-- Client -->
+  <script src="app/modules/client/client.module.js"></script>
   <script src="app/modules/client/client.controller.js"></script>
-  <script src="app/modules/dashboard/dashboard.controller.js"></script>
-  <script src="app/modules/menu/menu.controller.js"></script>
-
-  <!-- Services and Factories -->
-  <script src="app/modules/configuration/configuration.factory.js"></script>
-  <script src="app/modules/message/message.factory.js"></script>
-  <script src="app/modules/notifications/notifications.factory.js"></script>
   <script src="app/modules/client/client.factory.js"></script>
+  
+  <!-- Configuration -->
+  <script src="app/modules/configuration/configuration.module.js"></script>
+  <script src="app/modules/configuration/configuration.factory.js"></script>
+  
+  <!-- Dashboard -->
+  <script src="app/modules/dashboard/dashboard.module.js"></script>
+  <script src="app/modules/dashboard/dashboard.controller.js"></script>
   <script src="app/modules/dashboard/dashboard.factory.js"></script>
+  
+  <!-- Login -->
+  <script src="app/modules/login/login.module.js"></script>
+  <script src="app/modules/login/login.controller.js"></script>
+  
+  <!-- Menu -->
+  <script src="app/modules/menu/menu.module.js"></script>
+  <script src="app/modules/menu/menu.controller.js"></script>
   <script src="app/modules/menu/menu.factory.js"></script>
+
+  <!-- Message -->
+  <script src="app/modules/message/message.module.js"></script>
+  <script src="app/modules/message/message.factory.js"></script>
+
+  <!-- Notifications -->
+  <script src="app/modules/notifications/notifications.module.js"></script>
+  <script src="app/modules/notifications/notifications.factory.js"></script>
+  
+  <!-- Shared -->
+  <script src="app/modules/shared/shared-menu/shared-menu.module.js"></script>
   <script src="app/modules/shared/shared-menu/shared-menu.factory.js"></script>
 </head>
 
